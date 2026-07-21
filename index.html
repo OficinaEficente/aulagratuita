@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula Gratuita: Direção Hidráulica | Odirlei Gobbo</title>
+<meta name="description" content="Aula gratuita — como transformar direção hidráulica em um dos serviços mais rentáveis da sua oficina.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg: #14181c;
+    --bg-panel: #1c2228;
+    --bg-panel-2: #222a31;
+    --steel: #3c454e;
+    --steel-line: #2b323a;
+    --accent: #dc1409;
+    --accent-2: #2b1c68;
+    --accent-2-light: #9f98bb;
+    --accent-dim: #a30f07;
+    --accent-glow: rgba(220,20,9,0.35);
+    --text: #ece7dc;
+    --text-dim: #9aa4ac;
+    --text-faint: #626b72;
+    --paper: #f4f2ec;
+    --radius: 4px;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background: var(--bg);
+    background-image:
+      radial-gradient(circle at 15% 0%, rgba(220,20,9,0.06), transparent 45%),
+      repeating-linear-gradient(135deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 8px);
+    color: var(--text);
+    font-family:'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a{ color:inherit; }
+  img{ max-width:100%; display:block; }
+  .display{ font-family:'Bebas Neue', sans-serif; letter-spacing:0.01em; }
+  .mono{ font-family:'IBM Plex Mono', monospace; }
+  .wrap{ max-width: 720px; margin:0 auto; padding: 0 20px; }
+  section{ padding: 48px 0; }
+  .eyebrow{ font-size:12px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; margin-bottom:12px; }
+  .eyebrow.blue{ color: var(--accent-2-light); }
+  .eyebrow.red{ color: var(--accent); }
+  h2.display{ font-size: 30px; line-height:1.05; margin-bottom:16px; }
+  p.lead{ color: var(--text-dim); font-size:16px; line-height:1.6; }
+
+  header.topbar{
+    display:flex; align-items:center; justify-content:center;
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--steel-line);
+  }
+  .brand-mark{ height:42px; padding:5px 10px; background:var(--paper); border-radius:8px; display:flex; align-items:center; }
+  .brand-mark img{ height:100%; width:auto; }
+
+  .hero{ padding-top: 36px; text-align:center; }
+  h1.display{
+    font-size: 40px; line-height: 1.0; margin-bottom:16px;
+  }
+  h1.display .hl{ color: var(--accent); }
+  .hero-sub{ color:var(--text-dim); font-size:16px; line-height:1.6; max-width:52ch; margin:0 auto 8px; }
+
+  /* video */
+  .video-wrap{
+    position:relative; aspect-ratio:16/9; border-radius:var(--radius); overflow:hidden;
+    border:1px solid var(--steel-line); background:#000; cursor:pointer; margin: 28px 0 20px;
+  }
+  .video-wrap img{ width:100%;
