@@ -20,8 +20,6 @@
     --accent: #dc1409;
     --accent-2: #2b1c68;
     --accent-2-light: #9f98bb;
-    --accent-dim: #a30f07;
-    --accent-glow: rgba(220,20,9,0.35);
     --text: #ece7dc;
     --text-dim: #9aa4ac;
     --text-faint: #626b72;
@@ -44,7 +42,7 @@
   .display{ font-family:'Bebas Neue', sans-serif; letter-spacing:0.01em; }
   .mono{ font-family:'IBM Plex Mono', monospace; }
   .wrap{ max-width: 720px; margin:0 auto; padding: 0 20px; }
-  section{ padding: 48px 0; }
+  section{ padding: 44px 0; }
   .eyebrow{ font-size:12px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; margin-bottom:12px; }
   .eyebrow.blue{ color: var(--accent-2-light); }
   .eyebrow.red{ color: var(--accent); }
@@ -56,19 +54,154 @@
     padding: 18px 20px;
     border-bottom: 1px solid var(--steel-line);
   }
-  .brand-mark{ height:42px; padding:5px 10px; background:var(--paper); border-radius:8px; display:flex; align-items:center; }
-  .brand-mark img{ height:100%; width:auto; }
-
-  .hero{ padding-top: 36px; text-align:center; }
-  h1.display{
-    font-size: 40px; line-height: 1.0; margin-bottom:16px;
+  .brand-mark{
+    display:flex; align-items:center; gap:8px;
   }
+  .brand-mark .dot{
+    width:14px; height:14px; border-radius:50%; background:var(--accent);
+  }
+  .brand-mark span{
+    font-family:'Bebas Neue', sans-serif; font-size:20px; letter-spacing:0.03em; color:var(--text);
+  }
+  .brand-mark span b{ color: var(--accent-2-light); }
+
+  .hero{ padding-top: 32px; text-align:center; }
+  h1.display{ font-size: 38px; line-height: 1.02; margin-bottom:16px; }
   h1.display .hl{ color: var(--accent); }
   .hero-sub{ color:var(--text-dim); font-size:16px; line-height:1.6; max-width:52ch; margin:0 auto 8px; }
 
-  /* video */
   .video-wrap{
     position:relative; aspect-ratio:16/9; border-radius:var(--radius); overflow:hidden;
-    border:1px solid var(--steel-line); background:#000; cursor:pointer; margin: 28px 0 20px;
+    border:1px solid var(--steel-line); background:#000; cursor:pointer; margin: 26px 0 20px;
   }
-  .video-wrap img{ width:100%;
+  .video-wrap img{ width:100%; height:100%; object-fit:cover; opacity:0.85; }
+  .video-wrap iframe{ width:100%; height:100%; border:none; }
+  .video-fallback{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    background: linear-gradient(160deg, var(--accent-2), #1a1240); flex-direction:column; gap:10px; color:var(--text-dim);
+  }
+  .video-play{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; z-index:2; pointer-events:none; }
+  .video-play .circle{
+    width:64px; height:64px; border-radius:50%; background:rgba(220,20,9,0.92);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .video-play svg{ width:26px; height:26px; }
+
+  .cta-btn{
+    display:block; text-align:center; background:var(--accent); color:var(--paper);
+    font-weight:700; font-size:16px; letter-spacing:0.01em;
+    padding:18px 24px; border-radius: var(--radius); text-decoration:none;
+    box-shadow: 0 8px 24px -8px rgba(220,20,9,0.35);
+  }
+  .cta-btn:hover{ background:#f0271a; }
+  .cta-sub{ text-align:center; font-size:12px; color:var(--text-faint); margin-top:10px; }
+
+  .learn-list{ list-style:none; margin-top:18px; display:flex; flex-direction:column; gap:12px; }
+  .learn-list li{
+    display:flex; gap:12px; align-items:flex-start;
+    background: var(--bg-panel); border:1px solid var(--steel-line); border-radius:var(--radius);
+    padding:14px 16px; font-size:15px; color:var(--text);
+  }
+  .learn-list li .ok{ color: var(--accent-2-light); font-weight:700; flex-shrink:0; }
+
+  .authority-quote{
+    margin-top:16px; font-family:'IBM Plex Mono', monospace; font-size:14px; color:var(--accent);
+    border-left:2px solid var(--accent); padding-left:12px;
+  }
+
+  .stat-row{ display:flex; justify-content:space-around; text-align:center; margin:22px 0; flex-wrap:wrap; gap:16px; }
+  .stat-row .item .n{ font-family:'Bebas Neue', sans-serif; font-size:28px; color:var(--text); line-height:1; }
+  .stat-row .item .l{ font-size:11px; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.05em; margin-top:4px; }
+
+  footer{ text-align:center; padding: 36px 20px 44px; border-top:1px solid var(--steel-line); margin-top:16px; }
+  .footer-sig{ font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--accent); margin-bottom:16px; }
+  .footer-wa{
+    display:inline-flex; align-items:center; gap:8px; color:var(--text-dim); font-size:13px;
+    text-decoration:none; border:1px solid var(--steel); padding:8px 14px; border-radius:var(--radius);
+  }
+  .footer-copy{ font-size:11px; color:var(--text-faint); margin-top:20px; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand-mark"><div class="dot"></div><span>OFICINA <b>EFICIENTE</b></span></div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="eyebrow red">Aula gratuita</div>
+    <h1 class="display">COMO TRANSFORMAR DIREÇÃO HIDRÁULICA EM UM DOS SERVIÇOS MAIS <span class="hl">RENTÁVEIS</span> DA SUA OFICINA</h1>
+    <p class="hero-sub">Direção hidráulica é simples, rápida e rentável — a maioria das oficinas só não trabalha com isso por falta de informação. Assista essa aula gratuita com Odirlei Gobbo e veja os primeiros passos pra começar.</p>
+
+    <div class="video-wrap" id="video-wrap">
+      <div class="video-fallback">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15.5 8.5 21 5v14l-5.5-3.5"/><rect x="3" y="6" width="12.5" height="12" rx="1.5"/></svg>
+        <span>Aula Gratuita — Direção Hidráulica</span>
+      </div>
+      <img src="https://i.ytimg.com/vi/qK7X7hgpfPw/hqdefault.jpg" alt="Aula gratuita direção hidráulica" loading="lazy" onerror="this.style.display='none'">
+      <div class="video-play"><div class="circle">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+      </div></div>
+    </div>
+
+    <a class="cta-btn" href="https://vendas.oficinaeficiente.com.br" id="cta-hero">Quero me especializar em Direção Hidráulica</a>
+    <div class="cta-sub">Vaga na próxima turma da Mentoria Oficina Eficiente</div>
+  </section>
+
+  <section>
+    <div class="eyebrow blue">O que você vai ver na aula</div>
+    <h2 class="display">DIRETO AO PONTO, SEM ENROLAÇÃO</h2>
+    <ul class="learn-list">
+      <li><span class="ok">✓</span> Como avaliar se uma caixa de direção tem reparo — direto no carro, sem precisar desmontar</li>
+      <li><span class="ok">✓</span> O procedimento certo pra desmontagem (e por que começar pelo reservatório evita estragar a bomba)</li>
+      <li><span class="ok">✓</span> Cuidados na montagem dos retentores de alta pressão</li>
+      <li><span class="ok">✓</span> Como saber quando vale reformar e quando vale trocar a peça</li>
+      <li><span class="ok">✓</span> Como testar a caixa de direção sem precisar de equipamento caro</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="eyebrow red">Quem ensina</div>
+    <h2 class="display" style="font-size:26px;">ODIRLEI GOBBO — 26 ANOS DE OFICINA, TRANSFORMADOS EM MÉTODO</h2>
+    <p class="lead">Mais de 20 anos treinando mecânicos de todo o Brasil pra trabalhar com direção hidráulica — sem achismo, com diagnóstico técnico de verdade.</p>
+    <div class="authority-quote">"A maioria troca peça. Especialista resolve causa."</div>
+  </section>
+
+  <section>
+    <div class="eyebrow blue">Vale a pena?</div>
+    <h2 class="display" style="font-size:26px;">A CONTA É SIMPLES</h2>
+    <div class="stat-row">
+      <div class="item"><div class="n mono">R$100-150</div><div class="l">Custo do kit de reparo</div></div>
+      <div class="item"><div class="n mono">R$1.000-1.500</div><div class="l">Valor do serviço completo</div></div>
+      <div class="item"><div class="n mono">+60 milhões</div><div class="l">Veículos no Brasil com direção hidráulica</div></div>
+    </div>
+    <p class="lead">Um serviço de meio período, com uma margem de lucro que a maioria das oficinas está deixando na mesa — só por falta de informação técnica.</p>
+  </section>
+
+  <section id="inscricao">
+    <div class="eyebrow red">Próximo passo</div>
+    <h2 class="display">QUER APRENDER DE VERDADE?</h2>
+    <p class="lead">Essa aula é só uma prévia. No treinamento completo — um dia inteiro, ao vivo — você aprende tudo sobre direção hidráulica, do reservatório até a caixa, com certificado, ferramental próprio pra fornecer e suporte direto com o professor.</p>
+    <a class="cta-btn" href="https://vendas.oficinaeficiente.com.br">Quero garantir minha vaga</a>
+    <div class="cta-sub">Vagas limitadas por turma</div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-sig">"A maioria troca peça. Especialista resolve causa."</div>
+  <a class="footer-wa" href="https://wa.me/5511964078463" target="_blank">Falar com a equipe no WhatsApp</a>
+  <div class="footer-copy">Oficina Eficiente © 2026</div>
+</footer>
+
+<script>
+const videoWrap = document.getElementById('video-wrap');
+videoWrap.addEventListener('click', () => {
+  videoWrap.innerHTML = '<iframe src="https://www.youtube.com/embed/qK7X7hgpfPw?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+});
+</script>
+
+</body>
+</html>
