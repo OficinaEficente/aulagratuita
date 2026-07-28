@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aulagratuita.oficinaeficiente.com.br/sitemap.xml
